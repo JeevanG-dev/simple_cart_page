@@ -1,0 +1,43 @@
+.nav_container {
+  font-family: fantasy;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(153, 205, 50, 0.769);
+  padding: 0.7rem 2rem;
+}
+
+.left_side > h3 {
+  padding: 0.2rem 0.5rem;
+  text-align: center;
+  font-size: larger;
+  filter: drop-shadow(3px 6px 1px #e0041d);
+}
+
+.middle_section > input {
+  padding: 0.5rem 1rem;
+  width: 30rem;
+  outline: none;
+  border-radius: 0.4rem;
+}
+
+.right_side > ol {
+  display: flex;
+  gap: 2rem;
+}
+
+.right_side > ol > li {
+  border-bottom: 1px solid red;
+  width: max-content;
+  list-style: none;
+  padding: 0.2rem 0.7rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right_side > ol > li:hover {
+  border-bottom: 1px solid black;
+color: red;
+}
