@@ -1,11 +1,10 @@
+ import "./App.css";
 import MainCartPage from "./CartPage/MainCartPage";
-
 
 function App() {
   return (
     <>
-   
-      <MainCartPage/>
+      <MainCartPage />
     </>
   );
 }

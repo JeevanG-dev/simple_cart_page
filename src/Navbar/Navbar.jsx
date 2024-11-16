@@ -13,7 +13,7 @@ const {checkout,setCheckout} = useContext(cartContext)
     <>
       <div className="nav_container">
         <div className="left_side">
-          <h3>AMAZON</h3>
+          <h3>PEGATRON</h3>
         </div>
 
         <div className="middle_section">
@@ -34,7 +34,7 @@ else if (checkout === false){
 }
 
             }}>Cart</li>
-            <li>Profile</li>
+            <li>Account</li>
           </ol>
         </div>
       </div>
