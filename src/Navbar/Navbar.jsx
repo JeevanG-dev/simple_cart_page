@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import "./navbar.css";
-import cartContext from "../Store/cartContext";
+
 import { useNavigate } from "react-router-dom";
 
 function Navbar() {
 
 
-const {checkout,setCheckout} = useContext(cartContext)
+
 
 const navigate = useNavigate()
 
@@ -24,11 +24,11 @@ const navigate = useNavigate()
         <div className="right_side">
           <ol>
             <li onClick={()=>{
-              navigate('/homepage')
+              navigate('/')
             }}>Home</li>
             <li>Items</li>
             <li onClick={() => {
-             navigate('/')
+             navigate('/cartpage')
 
             }}>Cart</li>
             <li>Account</li>

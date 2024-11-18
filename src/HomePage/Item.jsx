@@ -3,7 +3,7 @@ import './homepage.css'
 
 
 
-function Item({image,name,price}){
+function Item({image,name,price,des}){
 
 
 
@@ -15,8 +15,8 @@ function Item({image,name,price}){
         <img src={image} alt="" />
     </div>
     <div className="about_product">
-<h3>{name}</h3>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, assumenda.</p>
+<h3 style={{marginBottom:"10px", height:"45px", overflow:"hidden"}}>{name}</h3>
+<p style={{height:"70px", overflow:"scroll"}}>{des}</p>
     </div>
 
     <div className="price">

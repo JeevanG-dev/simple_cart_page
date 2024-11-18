@@ -1,49 +1,44 @@
+import { useEffect, useState } from "react";
 import img2 from "../assets/img2.png";
 import Item from "./item";
+import axios from "axios";
 
 function HomeProduct() {
-  let product = [
-    {
-      id: 1,
-      name: "Iphone 11",
-      img: img2,
-      price: 123456
-    },
-    {
-      id: 2,
-      name: "Iphone 12",
-      img: img2,
-      price:123000,
-    },
-    {
-      id: 3,
-      name: "Samsung 21",
-      img: img2,
-      price:1245000,
-    },
-    {
-      id: 4,
-      name: "Samsung Note 10",
-      img: img2,
-      price:145000,
-    },
-    {
-      id: 5,
-      name: "Lenovo",
-      img: img2,
-      price:90000,
-    },
-    
-  ];
+
+  const [apiList, setApiList] = useState([]);
+
+  async function api() {
+    const response = await axios.get("https://fakestoreapi.com/products");
+
+    const responseResult = response.data;
+
+    const data = await axios.all(responseResult.map((item) => {
+      return {
+        id: item.id,
+        name: item.title,
+        img: item.image,
+        price:item.price,
+        des:item.description,
+      };
+    }))
+
+
+setApiList(data)
+  }
+
+  useEffect(() => {
+    api();
+  }, []);
 
   return (
     <>
-    <h2 className="product_title">Latest Added</h2>
+      <h2 className="product_title">Latest Added</h2>
       <div className="cart_gallery">
+      
 
-        {product.map((product) => (
-          <Item image={product.img} name={product.name} price={product.price} />
-        ))}
+        {
+          apiList.map(((ite) => <Item image={ite.img} price={ite.price} name={ite.name} key={ite.id} des={ite.des} />))
+        }
       </div>
     </>
   );

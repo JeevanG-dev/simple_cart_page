@@ -8,9 +8,9 @@ function App() {
     <>
 
 <Routes>
+<Route path="/" element={<HomePage/>}/>
+<Route path="/cartpage" element={<MainCartPage/>}/>
 
-<Route path="/" element={<MainCartPage/>}/>
-<Route path="/homepage" element={<HomePage/>}/>
 
 </Routes>
 
