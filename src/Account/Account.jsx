@@ -1,8 +1,26 @@
+
 import Navbar from "../Navbar/Navbar";
 import "./account.css";
+import { useState } from "react";
+
 
 function Account() {
+
+
+    const [userDetail, setUserDetail] = useState({
+
+name: user.name,
+email: user.email,
+address: user.address,
+
+
+    })
+
+
+
   return (
+
+
     <>
       <Navbar />
 
@@ -21,6 +39,11 @@ function Account() {
           <div className="passwordClass flex">
             <label htmlFor="">Create Password</label>
             <input type="password" />
+          </div>
+
+          <div className="addressClass flex">
+            <label htmlFor="">Address</label>
+            <input type="text" />
           </div>
 
           <button>Login</button>
