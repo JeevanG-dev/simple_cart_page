@@ -1,16 +1,11 @@
 import './homepage.css'
 
 
-
-
-function Item({image,name,price,des}){
-
-
-
+function Item({image,name,price,des,clicked}){
 
     return(
         <>
-<div className="cart_container">
+<div className="cart_container" onClick={clicked}>
     <div className="image">
         <img src={image} alt="" />
     </div>
