@@ -1,14 +1,9 @@
-
 import "./navbar.css";
 
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   const navigate = useNavigate();
-
-  const location = useLocation();
-
-  const data = location.state;
 
   return (
     <>
@@ -37,15 +32,18 @@ function Navbar() {
             >
               Items
             </li>
-            <li onClick={()=>{
-          
-            }}>Cart</li>
             <li
               onClick={() => {
-                alert("Sorry this page is under construction");
+               navigate('/account')
               }}
             >
               Account
+            </li>
+
+            <li
+            
+            >
+             Create Account 
             </li>
           </ol>
         </div>

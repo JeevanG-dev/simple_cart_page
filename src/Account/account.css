@@ -1,0 +1,47 @@
+.formContainer {
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mainContainer {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+ background: linear-gradient(#e66465, #9198e5);
+  height: 94vh;
+}
+
+label {
+  font-size: larger;
+}
+
+.flex {
+  display: flex;
+  gap: 5rem;
+  justify-content: space-between;
+}
+input {
+  padding: 0.7rem 1rem;
+  width: 15rem;
+  outline: none;
+ background: none;
+ border: 1px solid black;
+ border-radius: 10px;
+}
+
+button{
+    padding: 0.8rem 2rem;
+    width:20rem;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: none;
+  background: #09bc90;
+  color: wheat;
+  letter-spacing: 5px;
+  cursor: pointer;
+
+
+}

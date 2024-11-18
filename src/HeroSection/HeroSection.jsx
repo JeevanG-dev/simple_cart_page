@@ -1,5 +1,4 @@
 import "./herosection.css";
-import heroImage from "../assets/img2.png";
 import { useContext, useState } from "react";
 import cartContext from "../Store/cartContext";
 import { useLocation } from "react-router-dom";
