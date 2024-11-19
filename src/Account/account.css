@@ -7,11 +7,12 @@
 
 .mainContainer {
   display: flex;
-
+flex-direction: column;
   justify-content: center;
   align-items: center;
  background: linear-gradient(#e66465, #9198e5);
   height: 94vh;
+  gap: 1rem;
 }
 
 label {
