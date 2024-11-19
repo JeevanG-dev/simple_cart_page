@@ -1,9 +1,11 @@
 import Navbar from "../Navbar/Navbar";
+import changingState from "../Store/changingState";
 import "./account.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import UserDetails from "./UserDetails";
 
 function Account() {
-  const [isTrue, setIstrue] = useState(false);
+  const { isTrue, setIstrue } = useContext(changingState);
 
   const [userDetail, setUserDetail] = useState({
     name: "",
@@ -90,37 +92,11 @@ function Account() {
               setIstrue(!isTrue);
             }}
           >
-            {" "}
             {!isTrue ? "Already have an account" : "Create an Account"}
           </p>
         </div>
       ) : (
-        <div className="mainContainer">
-          <form className="formContainer">
-            <div className="emailClass flex">
-              <label htmlFor="email">Email : </label>
-              <input type="email" name="email" required />
-            </div>
-
-            <div className="passwordClass flex">
-              <label htmlFor="password">Create Password</label>
-              <input type="password" />
-            </div>
-
-            <button>{!isTrue ? "Login" : "Sign up"}</button>
-          </form>
-
-          <p
-            style={{ textDecoration: "underline", cursor: "pointer" }}
-            onClick={() => {
-              setIstrue(true);
-              setIstrue(!isTrue);
-            }}
-          >
-            {" "}
-            {!isTrue ? "Already have an account" : "Create an Account"}
-          </p>
-        </div>
+       <UserDetails/>
       )}
     </>
   );
