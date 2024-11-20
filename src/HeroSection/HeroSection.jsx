@@ -31,7 +31,7 @@ function HeroSection() {
           <div className="hero_right_section">
             <h2>
               {data.name} <br /> <br />
-              {data.price}
+              ${data.price}
             </h2>
             <p>
               {" "}

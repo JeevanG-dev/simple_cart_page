@@ -3,9 +3,12 @@ import changingState from "../Store/changingState";
 import "./account.css";
 import { useContext, useState } from "react";
 import UserDetails from "./UserDetails";
+import { useNavigate } from "react-router-dom";
 
 function Account() {
   const { isTrue, setIstrue } = useContext(changingState);
+
+  const navigate = useNavigate();
 
   const [userDetail, setUserDetail] = useState({
     name: "",
@@ -24,13 +27,14 @@ function Account() {
               <label htmlFor="name">Full Name : </label>
               <input
                 type="text"
+                required
                 name="name"
                 value={userDetail.name}
                 onChange={(e) => {
-                  const { name, value } = e.target;
+                  const { value } = e.target;
                   setUserDetail({
                     ...userDetail,
-                    [name]: value,
+                    name: value,
                   });
                 }}
               />
@@ -44,11 +48,11 @@ function Account() {
                 value={userDetail.email}
                 required
                 onChange={(e) => {
-                  const { name, value } = e.target;
+                  const { value } = e.target;
 
                   setUserDetail({
                     ...userDetail,
-                    [name]: value,
+                    email: value,
                   });
                 }}
               />
@@ -56,7 +60,7 @@ function Account() {
 
             <div className="passwordClass flex">
               <label htmlFor="password">Create Password</label>
-              <input type="password" />
+              <input type="password" required />
             </div>
 
             <div className="addressClass flex">
@@ -64,12 +68,13 @@ function Account() {
               <input
                 type="text"
                 name="address"
+                required
                 value={userDetail.address}
                 onChange={(e) => {
-                  const { name, value } = e.target;
+                  const { value } = e.target;
                   setUserDetail({
                     ...userDetail,
-                    [name]: value,
+                    address: value,
                   });
                 }}
               />
@@ -78,10 +83,16 @@ function Account() {
             <button
               onClick={(e) => {
                 e.preventDefault();
-                console.log(userDetail);
+                const { name, email, address } = userDetail;
+
+                if (name.trim() && email.trim() && address.trim()) {
+                  navigate("/account/user");
+                } else {
+                  alert("Please fill the form first");
+                }
               }}
             >
-              Login
+              Sign Up
             </button>
           </form>
 
@@ -96,7 +107,7 @@ function Account() {
           </p>
         </div>
       ) : (
-       <UserDetails/>
+        <UserDetails />
       )}
     </>
   );
