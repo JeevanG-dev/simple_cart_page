@@ -10,6 +10,7 @@ function UserDetails() {
   const [userId, setUserId] = useState([
     {
       name:'',
+      password:'',
    
     },
   ]);
@@ -30,6 +31,7 @@ function UserDetails() {
               onChange={(e) => {
                 const { value } = e.target;
                 setUserId({
+                  ...userId,
                   name: value,
                 });
                 console.log(userId.name);
@@ -40,13 +42,25 @@ function UserDetails() {
 
           <div className="passwordClass flex">
             <label htmlFor="password">Create Password</label>
-            <input type="password" />
+            <input 
+            type="password"
+            value={userId.password}
+             onChange={(e)=>{
+              const {value} = e.target
+
+              setUserId({
+                ...userId,
+                password: value
+              })
+              
+             }}
+              />
           </div>
 
           <button
             onClick={(e) => {
               e.preventDefault();
-const checking = users.some(user => user.email === userId.name)
+const checking = users.some(user => user.email === userId.name && user.password === userId.password)
 
 if(checking){
   navigate('/account/user')
