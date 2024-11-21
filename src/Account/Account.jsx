@@ -86,7 +86,7 @@ function Account() {
                 const { name, email, address } = userDetail;
 
                 if (name.trim() && email.trim() && address.trim()) {
-                  navigate("/account/user");
+                  navigate("/account/user", {state: userDetail});
                 } else {
                   alert("Please fill the form first");
                 }
