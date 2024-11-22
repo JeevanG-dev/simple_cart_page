@@ -9,12 +9,11 @@ function UserDetails() {
 
   const [userId, setUserId] = useState([
     {
-      name:'',
-      password:'',
-   
+      name: "",
+      email: "",
+      password: "",
     },
   ]);
-
 
   const navigate = useNavigate();
 
@@ -22,19 +21,36 @@ function UserDetails() {
     <>
       <div className="mainContainer">
         <form className="formContainer">
-          <div className="emailClass flex">
-            <label htmlFor="email">Email : </label>
+          <div className="flex">
+            <label htmlFor="name">Name : </label>
             <input
-              type="email"
-              name="email"
+              type="text"
+              name="name"
               value={userId.name}
               onChange={(e) => {
                 const { value } = e.target;
                 setUserId({
                   ...userId,
-                  name: value,
+                  name: value.trim(),
                 });
-                console.log(userId.name);
+             
+              }}
+              required
+            />
+          </div>
+          <div className="emailClass flex">
+            <label htmlFor="email">Email : </label>
+            <input
+              type="email"
+              name="email"
+              value={userId.email}
+              onChange={(e) => {
+                const { value } = e.target;
+                setUserId({
+                  ...userId,
+                  email: value.trim(),
+                });
+            
               }}
               required
             />
@@ -42,36 +58,36 @@ function UserDetails() {
 
           <div className="passwordClass flex">
             <label htmlFor="password">Create Password</label>
-            <input 
-            type="password"
-            value={userId.password}
-             onChange={(e)=>{
-              const {value} = e.target
+            <input
+              type="password"
+              value={userId.password}
+              onChange={(e) => {
+                const { value } = e.target;
 
-              setUserId({
-                ...userId,
-                password: value
-              })
-              
-             }}
-              />
+                setUserId({
+                  ...userId,
+                  password: value,
+                });
+              }}
+            />
           </div>
 
           <button
             onClick={(e) => {
               e.preventDefault();
-const checking = users.some(user => user.email === userId.name && user.password === userId.password)
+              const checking = users.some(
+                (user) =>
+                  user.email === userId.email &&
+                  user.password === userId.password &&
+                  user.name === userId.name
+              );
 
-if(checking){
-  navigate('/account/user')
-}
-else{
-  alert("user does not found")
-}
-}
-              
-             
-            }
+              if (checking) {
+                navigate("/account/user", { state: { userId } });
+              } else {
+                alert("user does not found");
+              }
+            }}
           >
             {!isTrue ? "Sign up" : "Login"}
           </button>

@@ -9,14 +9,14 @@
 
 .profile_container {
   display: flex;
-  border: 1px solid red;
+
   width: 90%;
   justify-content: space-between;
 }
 
 .profile_left > .image {
   width: 35rem;
-  height: 40rem;
+  height: 36rem;
  
 }
 
@@ -27,7 +27,7 @@
 }
 
 .profile_right {
-  border: 1px solid red;
+
   width: 40rem;
   display: flex;
   align-items: center;
@@ -38,7 +38,7 @@
 
 .profile_right > .user_details {
   display: flex;
-  border: 1px solid red;
+
   gap: 5rem;
   flex-direction: column;
 }

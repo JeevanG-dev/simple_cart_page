@@ -19,9 +19,10 @@ function Account() {
   return (
     <>
       <Navbar />
-
+<h1 style={{backgroundColor:"red", color:"white",letterSpacing:"5px",textAlign:"center", fontFamily:"monospace"}}>Welcome..</h1>
       {!isTrue ? (
         <div className="mainContainer">
+       
           <form className="formContainer">
             <div className="fullName flex">
               <label htmlFor="name">Full Name : </label>
@@ -86,7 +87,7 @@ function Account() {
                 const { name, email, address } = userDetail;
 
                 if (name.trim() && email.trim() && address.trim()) {
-                  navigate("/account/user", {state: userDetail});
+                  navigate("/account/user", {state: {userDetail}});
                 } else {
                   alert("Please fill the form first");
                 }
