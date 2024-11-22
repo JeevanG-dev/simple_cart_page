@@ -34,16 +34,20 @@ function Navbar() {
             </li>
             <li
               onClick={() => {
-               navigate('/account')
+                navigate("/account");
               }}
             >
               Account
             </li>
 
-            <li
-            
-            >
-             Create Account 
+            <li>
+              <a
+                style={{ textDecoration: "none" }}
+                href="https://github.com/JeevanG-dev"
+                target="_blank"
+              >
+                Admin
+              </a>
             </li>
           </ol>
         </div>
