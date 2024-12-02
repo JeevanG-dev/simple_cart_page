@@ -40,7 +40,7 @@ function HeroSection() {
               </span>
               {data.des}
             </p>
-            <h5 style={{ textAlign: "center" }}>Rating - 4.5/5</h5>
+            <h5 style={{ textAlign: "center" }}>Rating - 4.35/5</h5>
 
             <div className="increment">
               <p> + {count} -</p>
